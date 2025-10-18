@@ -1,0 +1,96 @@
+﻿@model BAI2.Models.SACH
+
+@{
+    ViewBag.Title = "ThemSachMoi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ThemSachMoi</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SACH</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TENSACH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TENSACH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TENSACH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GIABAN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GIABAN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GIABAN, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MOTA,new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea name="MOTA">Mô tả thông tin sách</textarea>
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ANHBIA, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="fileupload" />
+                @ViewBag.Thongbao
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NGAYCAPNHAT,  new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="NGAYCAPNHAT"/>
+                @Html.ValidationMessageFor(model=>model.NGAYCAPNHAT);
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SOLUONGBAN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SOLUONGBAN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SOLUONGBAN, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MACD, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               @Html.DropDownList("MACD")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MANXB,  new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MANXB")
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,35 @@
+﻿@model BAI01.Models.LoaiTinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoaiTinTuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTinTuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTinTuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiTinTuc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

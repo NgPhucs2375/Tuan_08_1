@@ -1,0 +1,77 @@
+﻿@model IEnumerable<BAI2.Models.SACH>
+
+@{
+    ViewBag.Title = "DMSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DMSach</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENSACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIABAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANHBIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONGBAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MACD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANXB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENSACH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIABAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTA)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Content/img/" + item.ANHBIA)"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONGBAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MACD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANXB)
+        </td>
+  
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MASACH }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MASACH }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MASACH })
+        </td>
+    </tr>
+}
+
+</table>

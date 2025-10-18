@@ -1,0 +1,52 @@
+﻿@model BAI01.Models.LoaiTinTuc
+
+@{
+    ViewBag.Title = "ThemMoi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Thêm mới Loại Tin Tức</h4>
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaLoaiTinTuc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaLoaiTinTuc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaLoaiTinTuc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenLoai, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenLoai, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenLoai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaTinTuc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.MaTinTuc,
+         (SelectList)ViewBag.MaTinTuc,
+         "-- Chọn Tin Tức --",
+         new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(model => model.MaTinTuc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
