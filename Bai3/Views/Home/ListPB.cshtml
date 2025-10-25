@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ListPB";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Bai3.ViewModel.ListPB
+@{
+    ViewBag.Title = "Danh sách phòng ban";
+}
+
+
+<div class="row">
+    <!-- Sidebar: danh sách phòng ban -->
+    <div class="col-md-3">
+        <h4>Phòng ban</h4>
+        <ul class="list-group">
+            @foreach (var dept in Model.Deparments)
+            {
+                <li class="list-group-item @(Model.SelectedDeptId == dept.Deptid ? "active" : "")">
+                    @Html.ActionLink(dept.NameDept, "ListPB", "Home", new { deptId = dept.Deptid }, null)
+                </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Nội dung: danh sách nhân viên -->
+    <div class="col-md-9">
+        <h4>Nhân viên</h4>
+        @if (Model.Employees.Any())
+        {
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ tên</th>
+                        <th>Giới tính</th>
+                        <th>Thành phố</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var emp in Model.Employees)
+                    {
+                        <tr>
+                            <td>@emp.Id</td>
+                            <td>@emp.NameEmpl</td>
+                            <td>@emp.Gender</td>
+                            <td>@emp.City</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = emp.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = emp.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = emp.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Chưa có nhân viên trong phòng ban này.</p>
+        }
+    </div>
+    @Html.ActionLink("Go back deparment list", "ListPB") |
+</div>
+

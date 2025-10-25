@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace BAI2.Models
 {
-    public partial class Model1 : DbContext
+    public partial class Model2 : DbContext
     {
-        public Model1()
-            : base("name=Model1")
+        public Model2()
+            : base("name=Model2")
         {
         }
 
@@ -33,6 +33,10 @@ namespace BAI2.Models
                 .WithRequired(e => e.SACH)
                 .WillCascadeOnDelete(false);
 
+            //modelBuilder.Entity<SACH>()
+            //    .HasOptional(e => e.SACH1)
+            //    .WithRequired(e => e.SACH2)
+            //    .Map(m => m.MapKey("SACH2_MASACH"));
 
             modelBuilder.Entity<SACH>()
                 .HasMany(e => e.VIETSACHes)

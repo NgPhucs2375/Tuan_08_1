@@ -45,13 +45,12 @@ namespace BAI2.Models
 
         public virtual NHAXUATBAN NHAXUATBAN { get; set; }
 
+        //public virtual SACH SACH1 { get; set; }
+
+        //public virtual SACH SACH2 { get; set; }
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VIETSACH> VIETSACHes { get; set; }
-
-          
-   
-
     }
 }

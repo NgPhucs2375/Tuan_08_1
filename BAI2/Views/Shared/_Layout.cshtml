@@ -20,6 +20,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Chitiet", "Chitietsach", "Home", new { id = ViewBag.CurrentSachId }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("List", "DMSach", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("sua", "Suasach", "Home", new { id = ViewBag.CurrentSachId }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Xoa", "Xoasach", "Home", new { id = ViewBag.CurrentSachId }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Them", "ThemSachMoi", "Home", new { id = ViewBag.CurrentSachId }, new { @class = "nav-link" })</li>
+
                 </ul>
             </div>
         </div>

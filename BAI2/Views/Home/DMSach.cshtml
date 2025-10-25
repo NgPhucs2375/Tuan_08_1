@@ -39,39 +39,40 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENSACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIABAN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MOTA)
-        </td>
-        <td>
-            <img src="@Url.Content("~/Content/img/" + item.ANHBIA)"/>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SOLUONGBAN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MACD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MANXB)
-        </td>
-  
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MASACH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MASACH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MASACH })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIABAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOTA)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/img/" + item.ANHBIA)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONGBAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MACD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MANXB)
+            </td>
+
+            <td>
+                @Html.ActionLink("Suasach", "Suasach", new { id = item.MASACH }) |
+                @Html.ActionLink("Details", "Chitietsach", new { id = item.MASACH }) |
+                @Html.ActionLink("Delete", "Xoasach", new { id = item.MASACH })
+            </td>
+        </tr>
+    }
 
 </table>

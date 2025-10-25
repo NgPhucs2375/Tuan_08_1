@@ -1,0 +1,84 @@
+﻿@model BAI2.Models.SACH
+
+@{
+    ViewBag.Title = "Chitietsach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.CurrentSachId = Model.MASACH;
+}
+
+<h2>Chitietsach</h2>
+
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIABAN)
+        </dt>
+
+        <dd>
+             @String.Format("{0:0,0}",Model.GIABAN) VND 
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANHBIA)
+        </dt>
+
+        <dd>
+          <img src="@Url.Content("~/Content/img/" + Model.ANHBIA)" width="120px"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+        </dt>
+
+        <dd>
+            @String.Format("{0:đ/MM/yyyy}",Model.NGAYCAPNHAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUONGBAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONGBAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MACD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MACD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANXB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Suasach", "Suasach", new { id = Model.MASACH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

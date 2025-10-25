@@ -136,7 +136,7 @@
     <Compile Include="Models\CHUDE.cs" />
     <Compile Include="Models\DONDATHANG.cs" />
     <Compile Include="Models\KHACHHANG.cs" />
-    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model2.cs" />
     <Compile Include="Models\NHAXUATBAN.cs" />
     <Compile Include="Models\SACH.cs" />
     <Compile Include="Models\TACGIA.cs" />
@@ -195,6 +195,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DMSach.cshtml" />
+    <Content Include="Views\Home\Chitietsach.cshtml" />
+    <Content Include="Views\Home\Xoasach.cshtml" />
+    <Content Include="Views\Home\Suasach.cshtml" />
     <Content Include="Views\Home\ThemSachMoi.cshtml" />
   </ItemGroup>
   <ItemGroup>

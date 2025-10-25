@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách nhân viên và phòng ban";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Bai3.ViewModel.EmployeeViewModel>
+<h2>Danh sách nhân viên và phòng ban</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Giới tính</th>
+            <th>Thành phố</th>
+            <th>Phòng ban</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NameEmpl</td>
+                <td>@item.Gender</td>
+                <td>@item.City</td>
+                <td>@item.DeptName</td>
+            </tr>
+        }
+    </tbody>
+</table>
